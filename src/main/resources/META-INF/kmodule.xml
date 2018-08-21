@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="departmentRules" packages="com.example.drooly1.department">
+        <ksession name="departmentRuleSession"/>
+    </kbase>
+
+    <kbase name="frozenCategoryRules" packages="com.example.drooly1.category">
+        <ksession name="categoryRuleSession"/>
+    </kbase>
+
+    <!--<kbase name="meatCategoryRules" packages="com.example.drooly1.category.meat.rules">-->
+        <!--<ksession name="meatRuleSession"/>-->
+    <!--</kbase>-->
+</kmodule>

@@ -10,6 +10,7 @@ public class Category {
     List<Item> items;
     BigDecimal allocated;
     Double allocationPortion;
+    String ruleSessionName;
 
     public Long getId() {
         return id;
@@ -57,5 +58,13 @@ public class Category {
 
     public void setAllocationPortion(Double allocationPortion) {
         this.allocationPortion = allocationPortion;
+    }
+
+    public String getRuleSessionName() {
+        return ruleSessionName;
+    }
+
+    public void setRuleSessionName(String ruleSessionName) {
+        this.ruleSessionName = ruleSessionName;
     }
 }

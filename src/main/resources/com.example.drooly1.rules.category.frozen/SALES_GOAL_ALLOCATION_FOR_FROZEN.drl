@@ -12,12 +12,9 @@ dialect  "mvel"
 
 rule "Distribute amongst all Items"
     when
-        $category: Category()
-//        $noOfItems: Number() from
-//           accumulate($it: Item() from $category.getItems(),count($it))
+        $category: Category(name == "FROZEN")
         $item: Item() from $category.getItems()
     then
-//        System.out.println("Item "+$item.getName());
         $item.setAlloction($category.getAllocated().divide(new BigDecimal(itemCount)));
 end
 

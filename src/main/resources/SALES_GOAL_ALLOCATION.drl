@@ -1,0 +1,31 @@
+import java.util.*;
+import com.example.drooly1.model.Department;
+import com.example.drooly1.model.Category;
+import com.example.drooly1.model.Item;
+import com.example.drooly1.model.SalesGoal
+import java.math.BigDecimal;
+
+global com.example.drooly1.model.SalesGoal goal;
+dialect  "mvel"
+
+rule "Distribute amongst all Categories"
+    when
+        $department:Department(name == "GROCERY")
+        $category: Category() from $department.getCategories()
+
+
+    then
+        System.out.println("Category "+$category.getName());
+        $category.setAllocated(goal.getGoal().multiply(new BigDecimal($category.getAllocationPortion())).divide(new BigDecimal(100)));
+end
+
+rule "Distribute equally amongst items" extends "Distribute amongst all Categories"
+when
+        $item: Item() from $category.getItems()
+        $noOfItems: Number() from
+                   accumulate($it: Item() from $category.getItems(),count($it))
+    then
+        $item.setAlloction($category.getAllocated().divide(new BigDecimal($noOfItems.intValue())));
+end
+
+

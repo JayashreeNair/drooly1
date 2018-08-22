@@ -17,7 +17,7 @@ public class TaxiFareCalculatorServiceTest {
 
     @Before
     public void setUp() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(TaxiFareConfiguration.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(DroolsMultipleSessionConfiguration.class);
         service = context.getBean(TaxiFareCalculatorService.class);
     }
 

@@ -4,11 +4,11 @@
         <ksession name="departmentRuleSession"/>
     </kbase>
 
-    <kbase name="frozenCategoryRules" packages="com.example.drooly1.category">
-        <ksession name="categoryRuleSession"/>
+    <kbase name="frozenCategoryRules" packages="com.example.drooly1.rules.category.frozen">
+        <ksession name="frozenRuleSession"/>
     </kbase>
 
-    <!--<kbase name="meatCategoryRules" packages="com.example.drooly1.category.meat.rules">-->
-        <!--<ksession name="meatRuleSession"/>-->
-    <!--</kbase>-->
+    <kbase name="meatCategoryRules" packages="com.example.drooly1.rules.category.meat">
+        <ksession name="meatRuleSession"/>
+    </kbase>
 </kmodule>

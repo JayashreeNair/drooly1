@@ -1,0 +1,22 @@
+package com.example.drooly1.category;
+
+import java.util.*;
+import com.example.drooly1.model.Department;
+import com.example.drooly1.model.Category;
+import com.example.drooly1.model.Item;
+import com.example.drooly1.model.SalesGoal
+import java.math.BigDecimal;
+
+global Integer itemCount;
+dialect  "mvel"
+
+rule "Distribute amongst all Items"
+    when
+        $category: Category(name == "MEAT")
+        $item: Item() from $category.getItems()
+    then
+        $item.setAlloction($category.getAllocated().divide(new BigDecimal(itemCount)));
+end
+
+
+
